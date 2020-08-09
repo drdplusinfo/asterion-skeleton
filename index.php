@@ -10,14 +10,14 @@ $documentRoot = $documentRoot ?? (PHP_SAPI !== 'cli' ? \rtrim(\dirname($_SERVER[
 /** @noinspection PhpIncludeInspection */
 require_once $documentRoot . '/vendor/autoload.php';
 
-$dirs = $dirs ?? new \DrdPlus\RulesSkeleton\Dirs($documentRoot);
+$dirs = $dirs ?? new \DrdPlus\AsterionSkeleton\Dirs($documentRoot);
 $htmlHelper = $htmlHelper
-    ?? \DrdPlus\RulesSkeleton\HtmlHelper::createFromGlobals($dirs, \DrdPlus\RulesSkeleton\Environment::createFromGlobals());
+    ?? \DrdPlus\AsterionSkeleton\HtmlHelper::createFromGlobals($dirs, \DrdPlus\AsterionSkeleton\Environment::createFromGlobals());
 if (PHP_SAPI !== 'cli') {
-    \DrdPlus\RulesSkeleton\TracyDebugger::enable($htmlHelper->isInProduction());
+    \DrdPlus\AsterionSkeleton\TracyDebugger::enable($htmlHelper->isInProduction());
 }
-$configuration = \DrdPlus\RulesSkeleton\Configuration::createFromYml($dirs);
-$servicesContainer = new \DrdPlus\RulesSkeleton\ServicesContainer($configuration, $htmlHelper);
+$configuration = \DrdPlus\AsterionSkeleton\Configuration::createFromYml($dirs);
+$servicesContainer = new \DrdPlus\AsterionSkeleton\ServicesContainer($configuration, $htmlHelper);
 
-$rulesApplication = $rulesApplication ?? $controller ?? new \DrdPlus\RulesSkeleton\RulesApplication($servicesContainer);
+$rulesApplication = $rulesApplication ?? $controller ?? new \DrdPlus\AsterionSkeleton\RulesApplication($servicesContainer);
 $rulesApplication->run();
