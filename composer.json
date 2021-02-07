@@ -1,35 +1,35 @@
 {
-  "name": "drdplus/asterion-skeleton",
-  "license": "MIT",
-  "type": "composer-plugin",
-  "description": "Skeleton for Asterion modules as HTML",
-  "keywords": [
-    "asterion",
-    "rules",
-    "helper",
-    "skeleton"
-  ],
-  "autoload": {
-    "psr-4": {
-      "DrdPlus\\": "DrdPlus/"
+    "name": "drdplus/asterion-skeleton",
+    "license": "MIT",
+    "type": "composer-plugin",
+    "description": "Skeleton for Asterion modules as HTML",
+    "keywords": [
+        "asterion",
+        "rules",
+        "helper",
+        "skeleton"
+    ],
+    "autoload": {
+        "psr-4": {
+            "DrdPlus\\": "DrdPlus/"
+        }
+    },
+    "require": {
+        "drdplus/rules-skeleton": "^3.1"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0",
+        "granam/exceptions-hierarchy": "^5.0",
+        "mockery/mockery": "^1.4",
+        "phpunit/phpunit": "^9.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "pre-autoload-dump": [
+            "rm -f DrdPlus/Tests/RulesSkeleton && mkdir -p DrdPlus/Tests && cd DrdPlus/Tests && ln -s ../../vendor/drdplus/rules-skeleton/DrdPlus/Tests/RulesSkeleton"
+        ]
     }
-  },
-  "require": {
-    "drdplus/rules-skeleton": "^1.7"
-  },
-  "require-dev": {
-    "composer/composer": "^1.9",
-    "granam/exceptions-hierarchy": "^5.0",
-    "mockery/mockery": "^1.4",
-    "phpunit/phpunit": "^8.5",
-    "roave/security-advisories": "dev-master"
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "scripts": {
-    "pre-autoload-dump": [
-      "rm -f DrdPlus/Tests/RulesSkeleton && mkdir -p DrdPlus/Tests && cd DrdPlus/Tests && ln -s ../../vendor/drdplus/rules-skeleton/DrdPlus/Tests/RulesSkeleton"
-    ]
-  }
 }

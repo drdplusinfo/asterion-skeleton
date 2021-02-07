@@ -2,9 +2,11 @@ web:
   protected_access: true
   eshop_url: 'https://www.fantasyobchod.cz/asterion-moduly'
   menu_position_fixed: false
-  show_home_button_on_homepage: true
-  show_home_button_on_routes: true
-  home_button_target: 'http://asterionrpg.cz/'
+  menu:
+    home_button:
+      show_on_homepage: true
+      show_on_routes: true
+      target: 'http://asterionrpg.cz/'
   name: 'HTML kostra pro Asterion moduly'
   title_smiley: ''
 google:
